@@ -124,10 +124,6 @@
                             {{-- </form> --}}
                         </div>
                     </div>
-                    {{-- @php
-                        $cookie_data = stripslashes(Illuminate\Support\Facades\Cookie::get('shopping_cart'));
-                        $cart_data = json_decode($cookie_data, true);
-                    @endphp --}}
 
                     <div class="header-right">
                         <div class="header-dropdown-link">
@@ -145,49 +141,6 @@
                                     <i class="icon-shopping-cart"></i>
                                     <span class="cart-txt">Cart</span>
                                 </a>
-
-                                {{-- <div class="dropdown-menu dropdown-menu-right">
-                                    <div class="dropdown-cart-products">
-
-                                        
-
-                                        @if (Cookie::get('shopping_cart'))
-                                            @php $total="0" @endphp
-                                            @foreach ($cart_data as $data)
-                                            <div class="product">
-                                                <div class="product-cart-details">
-                                                    <h4 class="product-title">
-                                                        <a href="{{route('product.details', $data['item_slug'])}}">{{App\Models\Product::find($data['item_id'])->product_name}}</a>
-                                                    </h4>
-
-                                                    <span class="cart-product-info">
-                                                        <span class="cart-product-qty">{{ $data['item_quantity'] }}</span>
-                                                        x ৳ {{ $data['item_price'] }}
-                                                    </span>
-                                                </div>
-
-                                                <figure class="product-image-container">
-                                                    <a href="{{route('product.details', $data['item_slug'])}}" class="product-image">
-                                                        <img src="{{ asset('uploads/products/preview/'.$data['item_image']) }}" alt="product">
-                                                    </a>
-                                                </figure>
-                                                <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                                            </div>
-                                                @php $total = $total + ($data["item_quantity"] * $data["item_price"]) @endphp
-                                            @endforeach
-                                            @else
-                                        @endif
-                                    </div>
-
-                                    <div class="dropdown-cart-total">
-                                        <span>Total</span>
-                                    </div>
-
-                                    <div class="dropdown-cart-action">
-                                        <a href="{{route('cart')}}" class="btn btn-primary">View Cart</a>
-                                        <a href="{{route('checkout')}}" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
-                                    </div>
-                                </div> --}}
                             </div>
                             <div class="dropdown cart-dropdown">
                                 <a href="{{route('customer.profile')}}" class="dropdown-toggle" >

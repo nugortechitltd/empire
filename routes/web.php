@@ -230,13 +230,13 @@ Route::get('/transaction/show/{transaction_id}', [TransactionController::class, 
 //////page design
 // Index page
 Route::get('/page/index', [PageController::class, 'index_page'])->name('index.page');
+Route::get('/page/offer', [OfferPageController::class, 'offer_page'])->name('offer.page');
 Route::post('/index/info/store', [PageController::class, 'index_info_store'])->name('index.info.store');
 Route::get('/index/info/delete/{index_id}', [PageController::class, 'index_info_delete'])->name('index.info.delete');
 Route::get('/index/info/edit/{index_id}', [PageController::class, 'index_info_edit'])->name('index.info.edit');
 Route::post('/index/info/update', [PageController::class, 'index_info_update'])->name('index.info.update');
 
 // Offer page
-Route::get('/page/offer', [OfferPageController::class, 'offer_page'])->name('offer.page');
 Route::post('/offer/info/store', [OfferPageController::class, 'offer_info_store'])->name('offer.info.store');
 Route::get('/offer/info/delete/{offer_id}', [OfferPageController::class, 'offer_info_delete'])->name('offer.info.delete');
 Route::get('/offer/info/edit/{offer_id}', [OfferPageController::class, 'offer_info_edit'])->name('offer.info.edit');
@@ -263,7 +263,7 @@ Route::get('/subscribe/delete/{sub_id}', [SubscribeController::class, 'subscribe
 
 // Faq
 Route::get('/faq', [FaqController::class, 'faq'])->name('faq');
-Route::get('/faq/info', [FaqController::class, 'faq_info'])->name('faq.info');
+Route::get('/page/faq/info', [FaqController::class, 'faq_info'])->name('faq.info');
 Route::post('/shipping/info/store', [FaqController::class, 'shipping_info_store'])->name('shipping.info.store');
 Route::get('/shipping/info/delete/{shipping_id}', [FaqController::class, 'shipping_info_delete'])->name('shipping.info.delete');
 Route::post('/order/return/info/store', [FaqController::class, 'order_return_info_store'])->name('order.return.info.store');
@@ -329,6 +329,6 @@ Route::post('/shipping/info/update', [ShippingpageController::class, 'shipping_i
 
 // Sitemap
 Route::get('/map', [FrontendController::class, 'map'])->name('map');
-Route::get('/page/map', [MapController::class, 'map_page'])->name('map.page');
+Route::get('/page/map/info', [MapController::class, 'map_page'])->name('map.info');
 Route::post('/map/info/store', [MapController::class, 'map_info_store'])->name('map.info.store');
 Route::get('/map/delete/{delete_id}', [MapController::class, 'map_delete'])->name('map.delete');

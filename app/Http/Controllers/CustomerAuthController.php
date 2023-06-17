@@ -47,8 +47,6 @@ class CustomerAuthController extends Controller
     function customer_profile() {
         $categories = Category::all();
         $orders = OrderProduct::where('customer_id', Auth::guard('customerauth')->id())->get();
-        return $orders;
-        die();
         // $totalrevenue = Order::where('status', 4)->sum('total');
         return view('frontend.customer_dashboard.customer_dashboard', [
             'categories' => $categories,

@@ -86,13 +86,6 @@
                 <hr class="mb-4">
                 <div class="row">
                     <div class="col-sm-6 mb-4">
-                        <div class="font-weight-bold mb-2">Invoice To:</div>
-                        <div>{{App\Models\BillingDetails::where('order_id', $order->order_id)->first()->name}}</div>
-                        <div>{{App\Models\BillingDetails::where('order_id', $order->order_id)->first()->address}}</div>
-                        <div>{{App\Models\BillingDetails::where('order_id', $order->order_id)->first()->mobile}}</div>
-                        <div>{{App\Models\BillingDetails::where('order_id', $order->order_id)->first()->email}}</div>
-                    </div>
-                    <div class="col-sm-6 mb-4">
                         <div class="font-weight-bold mb-2">Payment Details:</div>
                         <table>
                             <tbody>

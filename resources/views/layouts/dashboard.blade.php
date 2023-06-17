@@ -363,7 +363,7 @@
                                     <div>About site page</div>
                                 </a>
                             </li>
-                            <li class="sidenav-item" {{ Request::is('page/payment') ? 'active' : '' }}>
+                            <li class="sidenav-item {{ Request::is('page/payments') ? 'active' : '' }}" >
                                 <a href="{{route('payments.page')}}" class="sidenav-link">
                                     <div>Payment page</div>
                                 </a>
@@ -373,9 +373,14 @@
                                     <div>Shipping page</div>
                                 </a>
                             </li>
-                            <li class="sidenav-item" {{ Request::is('page/map') ? 'active' : '' }}>
-                                <a href="{{route('map.page')}}" class="sidenav-link">
+                            <li class="sidenav-item {{ Request::is('page/map/info') ? 'active' : '' }}">
+                                <a href="{{route('map.info')}}" class="sidenav-link">
                                     <div>Map page</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('page/faq/info') ? 'active' : '' }}">
+                                <a href="{{route('faq.info')}}" class="sidenav-link">
+                                    <div>Faq page</div>
                                 </a>
                             </li>
                         </ul>
@@ -409,24 +414,6 @@
                                     <div>Subscriber list</div>
                                 </a>
                             </li>
-                        </ul>
-                    </li>
-                    <li class="sidenav-item {{ Request::is('faq*') ? 'active open' : '' }}">
-                        <a href="javascript:" class="sidenav-link sidenav-toggle">
-                            <i class="sidenav-icon ion ion-ios-contacts"></i>
-                            <div>Faq</div>
-                        </a>
-                        <ul class="sidenav-menu">
-                            <li class="sidenav-item {{ Request::is('faq/info') ? 'active' : '' }}">
-                                <a href="{{route('faq.info')}}" class="sidenav-link">
-                                    <div>Add</div>
-                                </a>
-                            </li>
-                            {{-- <li class="sidenav-item {{ Request::is('faq/list') ? 'active' : '' }}">
-                                <a href="{{route('faq.list')}}" class="sidenav-link">
-                                    <div>Faq list</div>
-                                </a>
-                            </li> --}}
                         </ul>
                     </li>
                 </ul>
